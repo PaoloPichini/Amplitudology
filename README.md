@@ -12,7 +12,7 @@ STRUCTURE:
 Symbolic definitions (including kernel-level properties) for: dot products, Weyl spinor products, Dirac spinor products, field strength products, Levi-Civita tensors.
 
 Highlights:
--vec, pol: momentum and polarisation four-vectors, eg vec[i] --> p_i, pol[i] --> \epsilon_i
+- vec, pol: momentum and polarisation four-vectors, eg vec[i] --> p_i, pol[i] --> \epsilon_i
 - spA, spS: angle and square Weyl spinors, eg spA[i] --> |i>, spS[i] --> |i]
 - Ubar, V: Dirac spinors, eg Ubar[i] --> \bar{u}_i
 - ap, sp: angle and square Weyl products, eg ap[spA[i],spA[j]] --> <ij>, sp[spS[i],spS[j]] --> [ij]
@@ -32,6 +32,15 @@ Functions optimized for four-point Compton amplitudes (two-massive-two-massless 
 
 Generalisation of key functions to arbitrary amplitudes.
 
+Highlights:
+- Three number fields supported: rational, floating point, finite fields (prime $P to choose)
+- toField, toRational: convert between rationals and finite field arithmetic
+- Numgen: generates numerical polarisation vectors for a given set of massive and massless particles
+- Numdict: dictionary translating symbolic expressions (dot, dp, ap, sp, momp, epsilon) into numerical evaluations
+- NumEvalMatrix / NumEvalMatrixFP: builds a matrix of numerical evaluations over finite fields / floating point
+- indepFF: takes an ansatz list and extracts linearly independent structures using finite field row reduction
+- solveFF: solves a system of conditions on an ansatz using finite field numerics
+
 ------
 
 (3) Ansatz
@@ -42,6 +51,16 @@ Steps:
 - find basic building blocks (spinor products or dot products)
 - helper functions useful in generating the ansatz
 - functions to generate the ansatz and evaluate it numerically
+
+Key sections:
+- All-Point Ansatz: versatile functions for any kinematics (Lorentz dot products)
+- Spinor Ansatz: functions to build ansatz for Dirac spinor products
+
+Highlights:
+- BasisCov / BasisCovRel: produce a basis and basis reduction relation for any given kinematics (NB polarisation and momentum variables)
+- AnsatzCov / AnsatzCovFull: use basis to create an ansatz for Lorentz dot products
+- dotproducts / dotprod: generates all possible monomials of dot products from a list of building blocks
+- dpAnsatz / dpAnsatzSpecialize: constructs all possible ansatz terms with two Dirac spinors and a specified number of gamma matrices, given polarisation vectors of external particles
 
 ------
 
