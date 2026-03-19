@@ -1,7 +1,7 @@
 # Amplitudology
 Code to perform symbolic and numerical computations relevant for scattering amplitude techniques in quantum field theory.
 
-!!! IMPORTANT: this code was developed from private use and it has just been made public (19/03/2026). WORK IN PROGRESS to clean it up and comment it properly to make it user-friendly.
+!!! IMPORTANT: this code was developed for private use and it has just been made public (19/03/2026). WORK IN PROGRESS to clean it up and comment it properly to make it user-friendly.
 
 STRUCTURE:
 
